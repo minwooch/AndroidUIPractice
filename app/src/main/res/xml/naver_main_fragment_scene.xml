@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/naver_main_scroll_hidden">
+        <Constraint
+            android:id="@id/naver_main_scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/naver_main_bottom_layout"
+            app:layout_constraintTop_toBottomOf="@id/naver_main_search_layout"
+            app:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/naver_main_scroll_half">
+        <Constraint
+            android:id="@id/naver_main_scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toTopOf="@id/naver_main_bottom_layout"
+            app:layout_constraintTop_toBottomOf="@id/naver_main_search_layout"
+            app:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/naver_main_scroll_full">
+        <Constraint
+            android:id="@id/naver_main_scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/naver_main_bottom_layout"
+            app:layout_constraintTop_toBottomOf="@id/naver_main_search_layout"
+            app:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/half_to_full"
+        app:constraintSetStart="@id/naver_main_scroll_half"
+        app:constraintSetEnd="@id/naver_main_scroll_full"
+        >
+
+        <OnSwipe
+            app:dragScale="300"
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/naver_main_scroll_layout"
+            app:touchAnchorSide="top"
+            app:touchRegionId="@id/naver_main_scroll_layout" />
+
+        />
+
+    </Transition>
+</MotionScene>

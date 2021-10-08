@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        app:motionDebug="SHOW_ALL"
+        app:layoutDescription="@xml/naver_main_fragment_scene"
+        android:id="@+id/naver_main_motion_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_2001"
+        >
+
+
+<!--
+        <LinearLayout
+            android:id="@+id/naver_main_scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/naver_bottom_sheet_background"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/naver_main_bottom_layout"
+            app:layout_constraintTop_toBottomOf="@id/naver_main_search_layout"
+            app:layout_constraintVertical_bias="1">
+
+            <View
+                android:layout_width="32dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/naver_bottom_sheet_bar" />
+
+
+        </LinearLayout>
+-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/naver_main_search_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/naver_search_background"
+            android:elevation="16dp"
+            android:transitionName="@string/naver_search_transition"
+            app:layout_constraintEnd_toStartOf="@id/naver_main_go_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/naverMainOpenDrawer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:paddingStart="17dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="3dp"
+                android:paddingBottom="18dp"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:singleLine="true"
+                android:text="@string/naver_search"
+                android:textColor="#ffbbbbbb"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_speech_recognition"
+                app:layout_constraintStart_toEndOf="@id/naverMainOpenDrawer"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="20dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_speech_recognition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="음성 검색"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:paddingStart="7dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="17dp"
+                android:paddingBottom="18dp"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_mic_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/naver_main_go_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/naver_go_background"
+            android:elevation="16dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@id/naver_main_search_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/naver_main_search_layout"
+            app:layout_constraintTop_toTopOf="@id/naver_main_search_layout">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/v_route_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="@string/naver_find"
+                android:textColor="#ffffffff"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.applsh.androiduipractice.base.DisableNestedScrollView
+            android:background="@color/white"
+            android:id="@+id/naver_main_scroll_layout"
+            android:paddingTop="16dp"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:paddingHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="6" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="7" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="9" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="10" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="11" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="13" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="14" />
+
+            </LinearLayout>
+
+
+        </com.applsh.androiduipractice.base.DisableNestedScrollView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/naver_main_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/naver_main_scroll_open_button"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

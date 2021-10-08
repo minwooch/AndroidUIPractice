@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/daangn_item_constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:stateListAnimator="@animator/pressed_shadow"
+    android:padding="16dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:background="@color/white"
+        android:id="@+id/daangn_item_image_view"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        >
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/daangn_item_image_internal_view"
+
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:scaleType="centerCrop"
+
+            app:riv_corner_radius="4dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/daangn_item_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/daangn_item_image_view"
+        app:layout_constraintTop_toTopOf="@id/daangn_item_image_view"
+        tools:text="물건 제목 1231" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/daangn_item_area_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/daangn_item_image_view"
+        app:layout_constraintTop_toBottomOf="@id/daangn_item_title_text_view"
+        tools:text="무슨동 . 10분 전" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/daangn_item_price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/daangn_item_image_view"
+        app:layout_constraintTop_toBottomOf="@id/daangn_item_area_text_view"
+        tools:text="100,000원" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

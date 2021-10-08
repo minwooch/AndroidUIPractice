@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.transition:transition-ktx:1.4.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5cc28b862f6d640cae87d9ffefcb8c5e/jetified-transition-ktx-1.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5cc28b862f6d640cae87d9ffefcb8c5e/jetified-transition-ktx-1.4.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5cc28b862f6d640cae87d9ffefcb8c5e/jetified-transition-ktx-1.4.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.transition/transition-ktx/1.4.0/35da53b94b22ec621f8449747f23ae1b7eed367f/transition-ktx-1.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

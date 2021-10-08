@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/naver_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/naver_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/naver_search_search_layout"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:transitionName="@string/naver_search_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/naver_search_back"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/naver_search_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/naver_search"
+                android:imeOptions="actionUnspecified|actionNone|actionGo|actionSearch|flagNoExtractUi"
+                android:inputType="textNoSuggestions"
+                android:paddingEnd="42dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/naver_search_mic_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingEnd="20dp"
+                android:src="@drawable/ic_baseline_mic_24"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/naver_search_delete_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingEnd="20dp"
+                android:src="@drawable/ic_baseline_cancel_24"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/naver_search_search_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidUIPractice</string>
+    <string name="naver_search">장소, 버스, 지하철, 주소 검색</string>
+    <string name="naver_find">길찾기</string>
+    <string name="naver_search_transition">naverSearchTransition</string>
+    <string name="daangn_item_image_transition">daangnItemImageTransition</string>
+</resources>

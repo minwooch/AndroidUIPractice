@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/naver_main_tag_start">
+        <Constraint
+            android:id="@id/naver_main_tag_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintTop_toTopOf="@id/naver_main_coordinator_layout" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/naver_main_tag_end">
+        <Constraint
+            android:id="@id/naver_main_tag_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintTop_toTopOf="@id/naver_main_coordinator_layout" />
+    </ConstraintSet>
+
+
+    <Transition
+        android:id="@+id/naver_main_tag_fade"
+        app:constraintSetEnd="@id/naver_main_tag_end"
+        app:constraintSetStart="@id/naver_main_tag_start">
+
+    </Transition>
+</MotionScene>
